@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhotoEditor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+  <div class="app">
+    <header class="nav">
+      <div class="brand"><span class="brand-badge">📷</span>PhotoEditor</div>
+      <div class="nav-links">
+        <a href="#tools">Free Tools</a>
+        <a href="#blog">Blog</a>
+        <a href="#about">About Us</a>
+        <button id="themeToggle" class="theme-btn" type="button">☀️ Light</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <h1>Elevate Your Business with <span class="gradient-text">AI Photo Editor</span></h1>
+      <p>Create Your Product Background</p>
+      <button class="start-btn" id="startBtn" type="button">Start</button>
+    </section>
+
+    <section class="feature-row" id="tools">
+      <button class="feature-card" type="button" data-mode="fashion">
+        <div class="icon">🧑‍🎨</div>
+        <h3>AI Fashion Models</h3>
+        <p>Automatically enhance model photos with professional looks.</p>
+      </button>
+
+      <button class="feature-card" type="button" data-mode="products">
+        <div class="icon">🧩</div>
+        <h3>AI Background for Products</h3>
+        <p>Generate clean product backgrounds for e-commerce with AI.</p>
+      </button>
+
+      <button class="feature-card" type="button" data-mode="models">
+        <div class="icon">🖼️</div>
+        <h3>AI Background for Models</h3>
+        <p>Automatically remove or change backgrounds for models’ images.</p>
+      </button>
+
+      <button class="feature-card" type="button" data-mode="enhancer">
+        <div class="icon">✨</div>
+        <h3>Photo Enhancer</h3>
+        <p>Enhance your images to professional quality in one click.</p>
+      </button>
+    </section>
+
+    <section class="editor-section" id="editor">
+      <h2 class="editor-title" id="editorTitle">Edit Your Photo</h2>
+      <div class="mode-chip" id="modeChip">Free mode</div>
+      <p class="editor-subtitle" id="editorSubtitle">
+        Upload an image, adjust the sliders, use AI enhance, then download the final result.
+      </p>
+
+      <div class="editor-wrap fade-slide">
+        <aside class="panel">
+          <div class="panel-header">Tools</div>
+          <div class="panel-body">
+            <label class="upload-box" for="fileInput" title="Choose image">
+              <div class="big-icon">🖼️</div>
+              <strong>Choose Image</strong>
+              <span>Click here to upload a photo</span>
+            </label>
+            <input id="fileInput" type="file" accept="image/*" />
+
+            <div class="controls">
+              <div class="control">
+                <div class="control-top"><span>Brightness</span><span id="brightnessValue">100%</span></div>
+                <input id="brightness" type="range" min="0" max="200" value="100" />
+              </div>
+
+              <div class="control">
+                <div class="control-top"><span>Saturation</span><span id="saturationValue">100%</span></div>
+                <input id="saturation" type="range" min="0" max="200" value="100" />
+              </div>
+
+              <div class="control">
+                <div class="control-top"><span>Grayscale</span><span id="grayscaleValue">0%</span></div>
+                <input id="grayscale" type="range" min="0" max="100" value="0" />
+              </div>
+            </div>
+
+            <div class="action-grid">
+              <button class="action-btn btn-ai" id="aiEnhance" type="button">AI Enhance</button>
+              <button class="action-btn btn-reset" id="resetBtn" type="button">Reset</button>
+              <button class="action-btn btn-download" id="downloadBtn" type="button">Download</button>
+            </div>
+          </div>
+        </aside>
+
+        <aside class="canvas-panel panel">
+          <div class="canvas-toolbar">
+            <span class="status" id="status">No image loaded</span>
+          </div>
+          <div class="canvas-stage">
+            <div class="canvas-frame">
+              <canvas id="photoCanvas"></canvas>
+              <div class="empty-state" id="emptyState">
+                <div class="empty-card">
+                  <div class="emoji">📸</div>
+                  <h2>No Image</h2>
+                  <p>Upload a photo to start editing.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="info-section" id="blog">
+      <div class="info-wrap">
+        <h2 class="info-title">Blog</h2>
+        <p class="info-subtitle">
+          Learn simple editing tips, product-photo ideas, and smart ways to improve your images using AI tools.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>How to make product photos look professional</h3>
+            <p>
+              Use clean lighting, balanced brightness, and a simple background. A clear photo helps customers focus on the product.
+            </p>
+          </div>
+          <div class="info-card">
+            <h3>Why model photos need better backgrounds</h3>
+            <p>
+              A clean background makes portraits and fashion photos look more polished, modern, and suitable for online use.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section" id="about">
+      <div class="info-wrap">
+        <h2 class="info-title">About Us</h2>
+        <p class="info-subtitle">
+          PhotoEditor is a simple and creative online tool made to help users edit photos fast with easy controls and useful presets.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Our goal</h3>
+            <p>
+              We want photo editing to feel easy, fast, and accessible for everyone, from product images to fashion-style photos.
+            </p>
+          </div>
+          <div class="info-card">
+            <h3>What we offer</h3>
+            <p>
+              A clean interface, useful photo tools, one-click enhancement, and a smooth editing experience for everyday use.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
