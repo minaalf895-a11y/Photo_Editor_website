@@ -90,6 +90,21 @@
               <button class="action-btn btn-reset" id="resetBtn" type="button">Reset</button>
               <button class="action-btn btn-download" id="downloadBtn" type="button">Download</button>
             </div>
+
+            <div class="extra-tools">
+              <button class="action-btn btn-negative" id="negativeBtn" type="button">Negative</button>
+              <button class="action-btn btn-sobel" id="sobelBtn" type="button">Sobel</button>
+              <button class="action-btn btn-hist" id="histBtn" type="button">Histogram EQ</button>
+              <button class="action-btn btn-compare" id="compareBtn" type="button">Compare</button>
+            </div>
+
+            <div class="compare-control hidden" id="compareControl">
+              <div class="control-top">
+                <span>Compare Position</span>
+                <span id="compareValue">50%</span>
+              </div>
+              <input id="compareSlider" type="range" min="0" max="100" value="50" />
+            </div>
           </div>
         </aside>
 
