@@ -285,11 +285,11 @@ body.light .hero p {
 }
 
 .editor-wrap {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 24px;
+  grid-template-columns: 300px 1fr;
+  gap: 18px;
   align-items: start;
 }
 
@@ -302,9 +302,9 @@ body.light .hero p {
 }
 
 .panel-header {
-  padding: 18px 22px;
+  padding: 16px 18px;
   border-bottom: 1px solid var(--border);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 800;
   background: rgba(255, 255, 255, 0.02);
 }
@@ -314,13 +314,13 @@ body.light .panel-header {
 }
 
 .panel-body {
-  padding: 20px 18px 22px;
+  padding: 14px 12px 16px;
 }
 
 .upload-box {
   border: 2px dashed rgba(0, 194, 168, 0.45);
-  border-radius: 18px;
-  padding: 24px 16px;
+  border-radius: 14px;
+  padding: 16px 12px;
   text-align: center;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.02);
@@ -334,20 +334,20 @@ body.light .panel-header {
 }
 
 .upload-box .big-icon {
-  font-size: 52px;
-  margin-bottom: 10px;
+  font-size: 38px;
+  margin-bottom: 6px;
 }
 
 .upload-box strong {
   display: block;
-  font-size: 1.1rem;
-  margin-bottom: 6px;
+  font-size: 1rem;
+  margin-bottom: 5px;
 }
 
 .upload-box span {
   display: block;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
 
 input[type="file"] {
@@ -356,14 +356,14 @@ input[type="file"] {
 
 .controls {
   display: grid;
-  gap: 16px;
-  margin-top: 18px;
+  gap: 12px;
+  margin-top: 14px;
 }
 
 .control {
   background: rgba(255, 255, 255, 0.02);
-  padding: 14px 14px 12px;
-  border-radius: 16px;
+  padding: 10px 10px 8px;
+  border-radius: 12px;
   border: 1px solid var(--border);
 }
 
@@ -375,8 +375,8 @@ body.light .control {
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  margin-bottom: 10px;
-  font-size: 0.98rem;
+  margin-bottom: 8px;
+  font-size: 0.92rem;
   font-weight: 700;
 }
 
@@ -389,17 +389,25 @@ input[type="range"] {
   accent-color: var(--secondary);
 }
 
-.action-grid {
+.action-grid,
+.extra-tools {
   display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.action-grid {
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 18px;
+}
+
+.extra-tools {
+  grid-template-columns: 1fr 1fr;
 }
 
 .action-btn {
-  padding: 14px 12px;
+  padding: 12px 10px;
   border-radius: 14px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 800;
   color: white;
   border: none;
@@ -417,6 +425,11 @@ input[type="range"] {
   transform: none;
 }
 
+.action-btn.active {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 0 4px rgba(0, 194, 168, 0.15);
+}
+
 .btn-ai {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
@@ -430,8 +443,37 @@ input[type="range"] {
   grid-column: span 2;
 }
 
+.btn-negative {
+  background: linear-gradient(135deg, #7f1d1d, #ef4444);
+}
+
+.btn-sobel {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+}
+
+.btn-hist {
+  background: linear-gradient(135deg, #14532d, #22c55e);
+}
+
+.btn-compare {
+  background: linear-gradient(135deg, #5b21b6, #a855f7);
+  grid-column: span 2;
+}
+
+.compare-control {
+  margin-top: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 12px 10px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+body.light .compare-control {
+  background: rgba(0, 0, 0, 0.02);
+}
+
 .canvas-panel {
-  min-height: 740px;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
 }
@@ -442,7 +484,7 @@ input[type="range"] {
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
-  padding: 16px 20px;
+  padding: 14px 18px;
   border-bottom: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.02);
 }
@@ -453,14 +495,14 @@ body.light .canvas-toolbar {
 
 .status {
   color: var(--muted);
-  font-size: 0.98rem;
+  font-size: 0.95rem;
 }
 
 .canvas-stage {
   flex: 1;
   display: grid;
   place-items: center;
-  padding: 22px;
+  padding: 12px;
   background:
     radial-gradient(circle at top left, var(--canvas-stage-1), transparent 34%),
     radial-gradient(circle at bottom right, var(--canvas-stage-2), transparent 36%),
@@ -470,6 +512,7 @@ body.light .canvas-toolbar {
 .canvas-frame {
   width: min(100%, 980px);
   aspect-ratio: 4 / 3;
+  max-height: min(60vh, 760px);
   border-radius: 22px;
   background: var(--canvas-bg);
   border: 1px solid var(--border);
@@ -483,7 +526,6 @@ body.light .canvas-toolbar {
 canvas {
   width: 100%;
   height: 100%;
-  object-fit: contain;
   display: block;
   background: var(--canvas-bg);
 }
@@ -633,7 +675,7 @@ body.dark .empty-card {
   }
 
   .canvas-panel {
-    min-height: 640px;
+    min-height: 500px;
   }
 
   .info-grid {
@@ -670,16 +712,22 @@ body.dark .empty-card {
     padding-right: 12px;
   }
 
-  .action-grid {
+  .action-grid,
+  .extra-tools {
     grid-template-columns: 1fr;
   }
 
-  .btn-download {
+  .btn-download,
+  .btn-compare {
     grid-column: span 1;
   }
 
   .canvas-panel {
-    min-height: 520px;
+    min-height: 420px;
+  }
+
+  .canvas-stage {
+    padding: 10px;
   }
 
   .info-section {
